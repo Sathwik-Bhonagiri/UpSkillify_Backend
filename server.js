@@ -12,13 +12,12 @@ import userRouter from './routes/userRoutes.js'
 const app = express()
 
 await connectDB()
-const allowedOrigins = ['http://localhost:5173', 'https://up-skillify-frontend.vercel.app/'];
+const allowedOrigins = ['http://localhost:5173', 'https://up-skillify-frontend.vercel.app'];
 app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-  optionsSuccessStatus: 200,
-})); 
+    origin:allowedOrigins,
+    methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+    credentials: true,
+}));
 app.use(express.json());
 await connectCloudinary()
 
